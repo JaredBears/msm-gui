@@ -6,19 +6,19 @@
   Go back
 </a>
 <div>
-  <a href="/delete_actor/****">
+  <a href="/delete_actor/<%= @the_actor.id %>">
     Delete actor
   </a>
 </div>
 <hr>
 
-<form action="/modify_actor/****" method="post">
+<form action="/update_actor/<%= @the_actor.id %>" method="post">
   <div>
     <label for="name_box">
       Name
     </label>
 
-    <input type="text" id="name_box" name="query_name" value="Tim Robbins">
+    <input type="text" id="name_box" name="query_name" value="<%= @the_actor.name %>">
   </div>
 
   <div>
@@ -26,7 +26,7 @@
       Dob
     </label>
 
-    <input type="date" id="dob_box" name="query_dob" value="1958-10-16">
+    <input type="date" id="dob_box" name="query_dob" value="<%= @the_actor.dob %>">
   </div>
 
   <div>
@@ -34,7 +34,9 @@
       Bio
     </label>
 
-    <textarea id="bio_box" name="query_bio" rows="3">Timothy Francis Robbins (born October 16, 1958) is an American actor, screenwriter, director, producer, and musician. He is best known for his portrayal of Andy Dufresne in the prison drama film The Shawshank Redemption (1994).</textarea>
+    <textarea id="bio_box" name="query_bio" rows="3">
+      <%= @the_actor.bio %> 
+    </textarea>
   </div>
 
   <div>
@@ -42,7 +44,7 @@
       Image
     </label>
 
-    <input type="text" id="image_box" name="query_image" value="https://image.tmdb.org/t/p/w500/hsCu1JUzQQ4pl7uFxAVFLOs9yHh.jpg">
+    <input type="text" id="image_box" name="query_image" value="<%= @the_actor.image %>">
   </div>
 
   <button>
